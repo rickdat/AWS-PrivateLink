@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "dd3a439d-1aad-4f92-baa9-1a739de3b9b1",
+		"name": "ProdAstraDBPrivateLink",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SetPrincipal",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"allowedPrincipals\": [\r\n        \"arn:aws:iam::111708290731:user/sebastian.estevez\"\r\n      ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.astra.datastax.com/v2/organizations/clusters/<DatabaseId>/datacenters/<DatabaseId>/private-link",
+					"protocol": "https",
+					"host": [
+						"api",
+						"astra",
+						"datastax",
+						"com"
+					],
+					"path": [
+						"v2",
+						"organizations",
+						"clusters",
+						"<DatabaseId>",
+						"datacenters",
+						"<DatabaseId>",
+						"private-link"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AcceptEndpoint",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"endpointID\": \"vpce-00324f6b767b43086\",\r\n      \"description\": \"test-endpoints\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://api.astra.datastax.com/v2/organizations/clusters/<DatabaseId>/datacenters/<DatabaseId>/endpoints",
+					"protocol": "https",
+					"host": [
+						"api",
+						"astra",
+						"datastax",
+						"com"
+					],
+					"path": [
+						"v2",
+						"organizations",
+						"clusters",
+						"<DatabaseId>",
+						"datacenters",
+						"<DatabaseId>",
+						"endpoints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetServiceName",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.astra.datastax.com/v2/organizations/clusters/<DatabaseId>/datacenters/<DatabaseId>/private-link",
+					"protocol": "https",
+					"host": [
+						"api",
+						"astra",
+						"datastax",
+						"com"
+					],
+					"path": [
+						"v2",
+						"organizations",
+						"clusters",
+						"<DatabaseId>",
+						"datacenters",
+						"<DatabaseId>",
+						"private-link"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "AstraCS:lMUARLDFFvKOEFpcMzbMHoZn:9842f4444b9dda609e17695a372603aeedd7213d82756fc9a87bbecsdfsdfsdfsd",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
